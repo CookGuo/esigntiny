@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+const program = require('commander')
+const esigntiny = require('../lib')
+const path = require('path')
+const argv = require('minimist')(process.argv.slice(2))
+const input = argv.i || argv.input
+const output = argv.o || argv.output
+const { getCwd } = require('../lib/utils')
+
+program
+  .version(require('../package.json').version, '-v --version')
+  .usage('<command> [options]')
+  .option('-i, --input', 'input directory [require]')
+  .option('-o, --output', 'output directory')
+
+program.command('start').description('start compress images').action(start)
+
+program.parse(process.argv)
+
+function start() {
+  if (!input) {
+    console.log('require input directory')
+    return
+  }
+
+  input = path.resolve(getCwd(), input)
+  if (!!output) output = path.resolve(getCwd(), output)
+
+  esigntiny({
+    input: input,
+    output: output,
+  })
+}
+
+if (!program.args.length) {
+  program.outputHelp()
+}

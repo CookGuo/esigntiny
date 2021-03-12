@@ -1,6 +1,6 @@
 {
   "name": "esigntiny",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "压缩图片工具",
   "main": "lib/index.js",
   "bin": {

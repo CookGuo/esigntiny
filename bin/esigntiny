@@ -4,9 +4,9 @@ const program = require('commander')
 const esigntiny = require('../lib')
 const path = require('path')
 const argv = require('minimist')(process.argv.slice(2))
-const input = argv.i || argv.input
-const output = argv.o || argv.output
-const { getCwd } = require('../lib/utils')
+let input = argv.i || argv.input
+let output = argv.o || argv.output
+const { getCwd } = require('../lib/utils.js')
 
 program
   .version(require('../package.json').version, '-v --version')

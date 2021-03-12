@@ -12,6 +12,7 @@
   "author": "laoguo",
   "license": "ISC",
   "dependencies": {
+    "cli-table": "^0.3.5",
     "commander": "^7.1.0",
     "listr": "^0.14.3"
   }

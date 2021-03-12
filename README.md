@@ -12,5 +12,4 @@ esigntiny({
   output: './images',
 })
 ```
-
-## Usage
+![image](https://user-images.githubusercontent.com/33617560/110903769-e5b72f80-8342-11eb-8dc0-e36ba07df17b.png)
